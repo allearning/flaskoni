@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New User</title>
+</head>
+<body>
+    <a href="{{ url_for('get_users') }}">Пользователи</a>
+    <h1>Edit User {{ user.name }} </h1>
+    <hr>
+    <form action="{{ url_for('patch_user', id=user.id) }}" method="post">
+        <p>
+            {% if errors['id'] %}
+                {{ errors['id'] }}
+            {% endif %}
+        </p>
+        <p>
+            <label for="nickname">Nickname:</label>
+            <input type="text" required name="nick" id="nickname" value="{{ user['name'] }}">
+        </p>
+        <p>
+            {% if errors['name'] %}
+                {{ errors['name'] }}
+            {% endif %}
+        </p>
+        <p>
+            <label for="mail">Email:</label>
+            <input type="email" required name="email" id="mail", value="{{ user['email'] }}">
+        </p>
+        <p>
+            {% if errors['email'] %}
+                {{ errors['email'] }}
+            {% endif %}
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+    <form action="{{ url_for('delete_user', id=user.id) }}" method="post">
+        <input type="submit" value="Remove">
+    </form>
+</body>
+</html>

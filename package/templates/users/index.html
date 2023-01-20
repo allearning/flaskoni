@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn2.hexlet.io/assets/application-6ad497bca0006066aaad48d1fd181f33f6408465626bc09a07f8647fb0f0e269.css" media="all" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Users</h1>
+    {% if credentails %}
+    <div>Logged as {{ credentails }}</div>
+    <form action="{{ url_for('logout') }}" method="post">
+        <input type="submit" value="Logout">
+    </form>
+    {% else %}
+    <form action="{{ url_for('login') }}" method="get">
+        <input type="submit" value="Log in">
+    </form>    
+    {% endif %}
+    <form action="/users">
+        <input type="search" name="term" id="search" value="{{ search }}">
+        <input type="submit" value="Search">
+    </form>
+    <a href="{{ url_for('get_new_user') }}">Добавить пользователя</a>
+    <hr>
+    {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td><a href="{{ url_for('get_user', id=user['id']) }}">{{ user['id'] }}</a></td>
+            <td>{{ user['name'] }}</td>
+            <td>{{ user['email'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

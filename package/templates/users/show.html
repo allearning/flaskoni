@@ -1,0 +1,4 @@
+id = {{ user['id'] }}
+<br>
+nickname = {{ user['name'] }}
+<p><a href="{{ url_for('edit_user', id=user['id']) }}">Изменить пользователя</a></p>

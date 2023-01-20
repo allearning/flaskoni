@@ -1,0 +1,10 @@
+{"name": "LEXA", "email": "LEXA@LEXA.LEXA", "id": 0}
+{"name": "Gena", "email": "Gena@gena.na", "id": 1}
+{"name": "Lolman", "email": "g@mail.com", "id": 2}
+{"name": "Actross", "email": "G@g.com", "id": 3}
+{"name": "Hamster", "email": "Bonk@bonk.donk", "id": 4}
+{"name": "Angela", "email": "A11star@Make.com", "id": 5}
+{"name": "Nana", "email": "na@na.na", "id": 6}
+{"name": "Da BOMB", "email": "da@bomb.com", "id": 8}
+{"name": "Longao", "email": "Long@ao.com", "id": 9}
+{"name": "\u041f\u0435\u0442\u0440\u0430\u0448", "email": "Pet@ash.ru", "id": 10}

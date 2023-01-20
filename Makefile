@@ -18,4 +18,7 @@ check: selfcheck test lint
 build: check
 	poetry build
 
+start:
+	poetry run flask --app package.example --debug run
+
 .PHONY: install test lint selfcheck check build
